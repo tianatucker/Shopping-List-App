@@ -1,0 +1,83 @@
+body {
+  background-color: #9BD1E5;
+  font-family: 'Domine', serif;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+p {
+  font-size: 1.5em;
+  margin: 0 25%;
+}
+
+.delete-btn {
+    padding: .5em;
+    font-size: .5em;
+    background-color: darkred;
+    margin-bottom: 0px;
+    border-bottom-width: 3em;
+    margin-left: inherit;
+}
+
+input[type=button] {
+  color: white;
+  width: 15%;
+  border: none;
+}
+
+input[type=text] {
+  border: gray solid 2px;
+  padding: .5em;
+  width: 30%;
+}
+
+ul {
+  list-style: none;
+}
+
+.lists {
+  text-align: left;
+}
+
+.fa-square-o, .fa-check-square {
+  margin-right: .75em;
+}
+
+.add-btn {
+  background-color: #192A51;
+  padding: .5em 1em;
+}
+
+.delete-btn {
+    padding: .5em;
+    font-size: .5em;
+    background-color: darkred;
+    margin-bottom: 0px;
+    margin-left: inherit;
+    display: none;
+}
+
+p:hover input{
+  display: inline;
+
+}
+
+@media (max-width: 700px) {
+  input[type=text], input[type=button] {
+    width: 60%;
+  }
+  input[type=button] {
+    margin-top: .5em;
+  }
+}
+
+@media (max-width: 625px) {
+  p {
+    font-size: 1.25em;
+    margin: 0 15%;
+  }
+}
