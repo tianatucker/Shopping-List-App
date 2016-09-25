@@ -41,6 +41,9 @@ ul {
 #add-btn {
   background-color: #192A51;
   padding: .5em 1em;
+  color: white;
+  width: 15%;
+  border: none;
 }
 
 .delete-btn {
@@ -59,6 +62,12 @@ li:hover input{
 .incomplete > li::before {
   font-family: "FontAwesome";
   content: "\f096";
+  margin-right: 1%;
+}
+
+.incomplete > li.special::before {
+  font-family: "FontAwesome";
+  content: "\f14a";
   margin-right: 1%;
 }
 
