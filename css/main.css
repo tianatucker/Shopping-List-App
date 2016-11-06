@@ -34,7 +34,11 @@ ul {
   text-align: left;
 }
 
-.fa-square-o, .fa-check-square {
+.fa, .fa-square-o, .fa-check-square {
+  margin-right: .75em;
+}
+
+i {
   margin-right: .75em;
 }
 
@@ -58,24 +62,6 @@ ul {
 li:hover .delete-btn{
   display: inline;
 }
-
-/*.incomplete > li::before {
-  font-family: "FontAwesome";
-  content: "\f096";
-  margin-right: 1%;
-}
-
-.incomplete > li.special::before {
-  font-family: "FontAwesome";
-  content: "\f14a";
-  margin-right: 1%;
-}
-
-.complete > li::before {
-  font-family: "FontAwesome";
-  content: "\f14a";
-  margin-right: 1%;
-}*/
 
 @media (max-width: 700px) {
   input[type=text], input[type=button] {
