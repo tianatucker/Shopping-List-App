@@ -6,9 +6,13 @@ $('#add-btn').click(function(){
   $('.incomplete').prepend($('<li><i class="fa fa-square-o"></i><button type="button" class="delete-btn">Delete</button></li>', {
     'text': $('#add-item').val()
   }));*/
-
+var num = 0;
   $('.incomplete').prepend(
-    $('<li id="'+'id1'+'"><i class="fa fa-square-o"></i>'+$('#add-item').val()+'<button type="button" class="delete-btn" id="'+'id1'+'">Delete</button></li>'));
+    $('<li id="item'+
+      Math.floor((Math.random() * 100) + 1)+'"><i class="fa fa-square-o"></i>'+
+      $('#add-item').val()+
+      '<button type="button" class="delete-btn" id="'+
+      Math.floor((Math.random() * 100) + 1)+'">Delete</button></li>'));
 
 var clicks = true;
 $('ul li i').on('click', function () {
@@ -20,13 +24,16 @@ $('ul li i').on('click', function () {
     }
     clicks++;
 });
-
-$('.delete-btn').click(function(){
-  $('li').empty();
+$('.delete-btn').on( "click", function( event ) {
+  $( event.target ).closest( "li" ).remove();
 });
 });
 });
 /*
+$('.delete-btn').click(function(){
+  $('li').empty();
+});
+
 var clicks = true;
 $('ul li').on('click', function () {
     var element = '<li></li>';
