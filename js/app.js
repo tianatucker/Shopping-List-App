@@ -1,16 +1,62 @@
 //On click add text input to list
 $(document).ready(function(){
+  console.log($('#add-btn'))
 $('#add-btn').click(function(){
-	$('.incomplete').prepend($('<li>', {
-		'text': $('#add-item').val()
-  }));
+  /*console.log($('#add-item'))
+  $('.incomplete').prepend($('<li><i class="fa fa-square-o"></i><button type="button" class="delete-btn">Delete</button></li>', {
+    'text': $('#add-item').val()
+  }));*/
+
+  $('.incomplete').prepend(
+    $('<li id="'+'id1'+'"><i class="fa fa-square-o"></i>'+$('#add-item').val()+'<button type="button" class="delete-btn" id="'+'id1'+'">Delete</button></li>'));
+
+var clicks = true;
+$('ul li i').on('click', function () {
+    var element = '<li></li>';
+    if (clicks % 2 == 1) { //check for an even or odd number
+        $(this).addClass('fa fa-check-square');
+    } else {
+        $(this).removeClass('fa fa-check-square');
+    }
+    clicks++;
+});
+
+$('.delete-btn').click(function(){
+  $('li').empty();
+});
+});
+});
+/*
+var clicks = true;
+$('ul li').on('click', function () {
+    var element = '<li></li>';
+    if (clicks % 2 == 1) { //check for an even or odd number
+        $(this).addClass('special');
+    } else {
+        $(this).removeClass('special');
+    }
+    clicks++;
+});
+
 $('ul').one('mouseover', 'li', function() {
     $(this).append('<input type="button" value="Delete" class="delete-btn">');
   });
 
-//When a unchecked box is clicked replace it with a checkmark
+$('ul li').click(function() {
+    var clicks = $(this).data('click');
+    if (clicks) {
+      addClass('special');
+    } else {
+      removeClass('special');
+    }
+  });
+});
+});
+
+/*When a unchecked box is clicked replace it with a checkmark
 $('ul').on('click', 'li', function() {
     $(this).toggleClass('special');
+    console.log("checkbox clicked");
   });
 });
 });
@@ -19,11 +65,9 @@ $('li').on('hover', function() {
     $(this).add("<input>").appendTo(".incomplete");
   });
 });
-
 $('ul').mouseover('li', function(){
   $('.delete-btn').css('display','inline');
 });
-
 $('ul').hover('li', function() {
     $(this).after('<input type="button" value="Delete" class="delete-btn" />');
   });*/
@@ -38,13 +82,11 @@ $('.incomplete').bind('DOMNodeInsertedIntoDocument',function(){
     $(this).toggleClass('special');
 });
 });
-
 //When a unchecked box is clicked replace it with a checkmark
 $('li').on('click', function() {
     $(this).toggleClass('special');
 });
 });
-
 /*$('.incomplete').on('DOMNodeInserted', function(e){
   if ($(e.target).is('.MyClass')) {
        DoSomething($(e.target));
@@ -63,5 +105,8 @@ $('li').on('click', function() {
 
 //Have to close things in reverse order
 
-//If it's a
+//console.log trace everything to verify that they are being applied to the right items
+//console.log the string you're using in jquery $ s not $ o
+
+
 
